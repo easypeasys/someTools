@@ -15,9 +15,11 @@ public class integrateCSV {
         String file2 = "pokedex_(Update_05.20).csv";
         String outFile = "pokemon_merged.csv";
 
-        String[] titles = new String[]{ "id","Name","Type 1","Type 2","HP","Attack","Defense","Sp. Atk","Sp. Def","Speed","Generation","Legendary",
+        String[] titles = new String[]{ "id","Name","type_number","Type 1","Type 2","height_m","weight_kg","total_points",
+                "HP","Attack","Defense","Sp. Atk","Sp. Def","Speed","Generation","Legendary",
                 "against_normal","against_fire","against_water","against_electric","against_grass","against_ice","against_fight",
-                "against_poison","against_ground","against_flying","against_psychic","against_bug","against_rock","against_ghost","against_dragon","against_dark","against_steel","against_fairy"};
+                "against_poison","against_ground","against_flying","against_psychic","against_bug","against_rock","against_ghost",
+                "against_dragon","against_dark","against_steel","against_fairy"};
         // Create HashMap to store data from file 1
         HashMap<String, String[]> dataMap = new HashMap<String, String[]>();
         HashMap<String, Boolean> foundLostMap = new HashMap<String, Boolean>();
@@ -57,8 +59,12 @@ public class integrateCSV {
                     // Write merged data to output file
                     writer.write(count++ + ",");
                     writer.write(data[0] + ",");
+                    writer.write(parts[8] + ",");
                     writer.write(data[1] + ",");
                     writer.write(data[2] + ",");
+                    writer.write(parts[11] + ",");
+                    writer.write(parts[12] + ",");
+                    writer.write(parts[17] + ",");
                     writer.write(data[3] + ",");
                     writer.write(data[4] + ",");
                     writer.write(data[5] + ",");
